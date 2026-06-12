@@ -9,5 +9,3 @@ Link da API: https://www.mridul.tech/breaking-bad-api
 Funcionalidades: Será possível fazer consultas sobre tudo o que a API oferece (personagens, eps, falas, mortes)
 
 Feito por: Lucas E. e Vinicius Xavier
-
-
