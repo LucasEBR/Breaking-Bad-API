@@ -1,14 +1,31 @@
 import { NavLink } from 'react-router-dom'
+import './Header.css'
 
 function Header() {
   return (
-    <div>
-      <h1>Breaking Bad API</h1>
+    <div className="header-breaking">
+      <div className="periodic-logo">
+        <div className="element-cell">
+          <span className="atomic-number">35</span>
+          <span className="element-symbol">Br</span>
+          <span className="element-name">BREAKING</span>
+        </div>
+        <div className="element-cell">
+          <span className="atomic-number">56</span>
+          <span className="element-symbol">Ba</span>
+          <span className="element-name">BAD</span>
+        </div>
+        <div className="element-cell">
+          <span className="atomic-number">15</span>
+          <span className="element-symbol">P</span>
+          <span className="element-name">API</span>
+        </div>
+      </div>
       <nav>
-        <NavLink to="/">Personagens</NavLink>
-        <NavLink to="/episodes">Episódios</NavLink>
-        <NavLink to="/quotes">Falas</NavLink>
-        <NavLink to="/deaths">Mortes</NavLink>
+        <NavLink to="/">Ficha Criminal</NavLink>
+        <NavLink to="/episodes">Aparições</NavLink>
+        <NavLink to="/quotes">Gravações</NavLink>
+        <NavLink to="/deaths">Obtuário</NavLink>
       </nav>
     </div>
   )

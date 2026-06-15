@@ -5,9 +5,12 @@ import HomePage from './pages/HomePage'
 import Episodes from './pages/Episodes'
 import Quotes from './pages/Quotes'
 import Deaths from './pages/Deaths'
+import Devs from './pages/Devs'
 import NotFound from './pages/NotFound'
 
+//https://github.com/LucasEBR/Breaking-Bad-API
 //cd C:/Users/Usuario/Breaking-Bad-API
+//https://api.mridul.tech/api/breaking-bad/characters/(1-56)
 
 function App() {
   return (
@@ -18,6 +21,7 @@ function App() {
         <Route path="/episodes" element={<Episodes />} />
         <Route path="/quotes" element={<Quotes />} />
         <Route path="/deaths" element={<Deaths />} />
+        <Route path="/devs" element={<Devs />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

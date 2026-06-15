@@ -1,0 +1,75 @@
+.header-breaking {
+  background: #1a2a18;
+  padding: 1rem 2rem;
+  border-bottom: 3px solid #e8c84a;
+}
+
+.periodic-logo {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.element-cell {
+  background: #3d5a3a;
+  border: 2px solid #e8c84a;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  min-width: 100px;
+  box-shadow: 3px 3px 0px #0f1a0e;
+}
+
+.atomic-number {
+  display: block;
+  font-size: 0.7rem;
+  color: #e8c84a;
+  font-family: monospace;
+  text-align: left;
+}
+
+.element-symbol {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e8c84a;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+}
+
+.element-name {
+  display: block;
+  font-size: 0.55rem;
+  color: #d4d6b0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Navegação */
+.header-breaking nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.header-breaking nav a {
+  color: #d4d6b0;
+  text-decoration: none;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s;
+}
+
+.header-breaking nav a:hover {
+  color: #e8c84a;
+  background: #2e4a2a;
+}
+
+.header-breaking nav a.active {
+  color: #e8c84a;
+  border-bottom: 2px solid #e8c84a;
+}

@@ -1,0 +1,32 @@
+.devs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Courier New', 'Fira Code', monospace;
+  background-color: #3d5a3a;
+  min-height: 100vh;
+}
+
+.fichas-duplas {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.ficha-dev {
+  flex: 1;
+  min-width: 350px;
+  max-width: 450px;
+  background: #d4d6b0;
+  border: 3px solid #2e2e2e;
+  padding: 1.5rem;
+  box-shadow: 8px 8px 0px #1a2a18;
+  transition: transform 0.2s;
+}
+
+.ficha-dev:hover {
+  transform: translateY(-5px);
+}

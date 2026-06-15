@@ -1,0 +1,37 @@
+.footer-breaking {
+  background: #1a2a18;
+  padding: 1.5rem 2rem;
+  margin-top: 3rem;
+  border-top: 3px solid #e8c84a;
+  font-family: 'Courier New', monospace;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #7b8a3b, #e8c84a, #7b8a3b, transparent);
+  margin: 0.5rem 0;
+}
+
+.footer-text {
+  color: #d4d6b0;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin: 0.75rem 0;
+  word-spacing: 2px;
+}
+
+.meth-green {
+  color: #e8c84a;
+  font-weight: bold;
+  text-shadow: 0 0 3px #3d5a3a;
+}
+
+.separator {
+  color: #7b8a3b;
+  margin: 0 0.75rem;
+  font-size: 0.6rem;
+}

@@ -1,0 +1,203 @@
+.criminal-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Courier New', 'Fira Code', monospace;
+  background-color: #3d5a3a; /* verde cacto */
+  min-height: 100vh;
+}
+
+.search-section {
+  background: #2e2e2e; /* cinza escuro */
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid #7b8a3b;
+  box-shadow: 5px 5px 0px #1a2a18;
+}
+
+.search-section h2 {
+  color: #e8c84a; /* amarelo Breaking Bad */
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e8c84a;
+  display: inline-block;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 0.75rem;
+  background: #1a1a1a;
+  border: 1px solid #7b8a3b;
+  color: #e8c84a;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #e8c84a;
+}
+
+.input-group button {
+  padding: 0.75rem 1.5rem;
+  background: #e8c84a;
+  border: none;
+  color: #1a2a18;
+  font-weight: bold;
+  font-family: monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.input-group button:hover {
+  background: #d4b83a;
+  transform: scale(1.02);
+}
+
+/* Ficha Criminal */
+.ficha-criminal {
+  background: #d4d6b0;
+  border: 3px solid #2e2e2e;
+  padding: 2rem;
+  box-shadow: 8px 8px 0px #1a2a18;
+  margin-top: 1.5rem;
+}
+
+.header-ficha {
+  text-align: center;
+  border-bottom: 2px dashed #3d5a3a;
+  margin-bottom: 1.5rem;
+}
+
+.header-ficha h1 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+  color: #3d5a3a;
+}
+
+.header-ficha h3 {
+  color: #7b8a3b;
+  margin: 0.25rem 0;
+}
+
+.criminal-id {
+  text-align: center;
+  background: #3d5a3a;
+  color: #e8c84a;
+  padding: 0.25rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.foto-dados {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.foto-area {
+  flex: 1;
+  text-align: center;
+}
+
+.foto-area img {
+  width: 100%;
+  max-width: 200px;
+  border: 3px solid #3d5a3a;
+  background: #ddd;
+}
+
+.dados-pessoais {
+  flex: 2;
+}
+
+.dados-pessoais p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  border-bottom: 1px dotted #7b8a3b;
+  padding-bottom: 0.25rem;
+}
+
+.dados-pessoais strong {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #3d5a3a;
+}
+
+.ocupacao-area {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #e8dba8;
+  border-left: 4px solid #e8c84a;
+}
+
+.ocupacao-area h4 {
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+  color: #3d5a3a;
+}
+
+.ocupacao-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ocupacao-list li {
+  font-size: 0.85rem;
+  font-family: monospace;
+  margin-bottom: 0.25rem;
+  color: #2e2e2e;
+}
+
+.apareceu-em {
+  margin: 1rem 0;
+  font-size: 0.85rem;
+}
+
+.apareceu-em span {
+  background: #3d5a3a;
+  color: #e8c84a;
+  padding: 0.2rem 0.4rem;
+  display: inline-block;
+  margin: 0.2rem;
+}
+
+.footer-ficha {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 2px dashed #7b8a3b;
+  font-size: 0.75rem;
+  text-align: center;
+  color: #7b8a3b;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #e8c84a;
+  font-family: monospace;
+  padding: 2rem;
+  text-shadow: 2px 2px 0px #1a2a18;
+}
+
+.error {
+  background: #5a2a2a;
+  color: #e8c84a;
+  padding: 1rem;
+  text-align: center;
+  font-family: monospace;
+  font-weight: bold;
+  border: 1px solid #e8c84a;
+}
