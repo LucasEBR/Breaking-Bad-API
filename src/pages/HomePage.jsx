@@ -66,11 +66,19 @@ function HomePage() {
               <img src={personagem.image_url} alt={personagem.name} />
             </div>
             <div className="dados-pessoais">
-              <p><strong>NOME COMPLETO:</strong> {personagem.full_name?.toUpperCase() || personagem.name?.toUpperCase()}</p>
-              <p><strong>ALCUNHA:</strong> {personagem.name === "Walter White" ? "HEISENBERG" : personagem.name === "Jesse Pinkman" ? "CAPTAIN COOK" : "N/A"}</p>
+              <p><strong>NOME COMPLETO:</strong> {
+              (personagem.full_name && personagem.full_name !== "unknown" 
+                ? personagem.full_name 
+                : personagem.name
+                ).toUpperCase()
+                }</p>
+                
+              {personagem.name === "Walter White" && (
+                <p><strong>ALCUNHA:</strong> HEISENBERG</p>
+              )}
+              
               <p><strong>DATA DE NASCIMENTO:</strong> {personagem.birth_date || "DESCONHECIDA"}</p>
               <p><strong>INTERPRETADO POR:</strong> {personagem.portrayed}</p>
-              <p><strong>STATUS:</strong> {personagem.name === "Walter White" ? "DECEDIDO" : "ATIVO"}</p>
             </div>
           </div>
 
