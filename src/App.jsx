@@ -9,8 +9,14 @@ import Devs from './pages/Devs'
 import NotFound from './pages/NotFound'
 
 //https://github.com/LucasEBR/Breaking-Bad-API
+
 //cd C:/Users/Usuario/Breaking-Bad-API
+//cd C:/Users/labunivas/Documents/breakingbad-api
+
 //https://api.mridul.tech/api/breaking-bad/characters/(1-56)
+//https://api.mridul.tech/api/breaking-bad/episodes/(1-62)
+//https://api.mridul.tech/api/breaking-bad/quotes/(1-86)
+//https://api.mridul.tech/api/breaking-bad/deaths/(1-65)
 
 function App() {
   return (

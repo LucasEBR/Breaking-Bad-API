@@ -1,14 +1,14 @@
-.criminal-container {
+.deaths-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 2rem 2rem 2rem;
   font-family: 'Courier New', 'Fira Code', monospace;
-  background-color: #3d5a3a; /* verde cacto */
+  background-color: #3d5a3a;
   min-height: 100vh;
 }
 
 .search-section {
-  background: #2e2e2e; /* cinza escuro */
+  background: #2e2e2e;
   padding: 1.5rem;
   margin-bottom: 2rem;
   border: 1px solid #7b8a3b;
@@ -16,7 +16,7 @@
 }
 
 .search-section h2 {
-  color: #e8c84a; /* amarelo Breaking Bad */
+  color: #e8c84a;
   text-transform: uppercase;
   font-size: 1.5rem;
   letter-spacing: 2px;
@@ -62,8 +62,7 @@
   transform: scale(1.02);
 }
 
-/* Ficha Criminal */
-.ficha-criminal {
+.ficha-morte {
   background: #d4d6b0;
   border: 3px solid #2e2e2e;
   padding: 2rem;
@@ -78,7 +77,7 @@
 }
 
 .header-ficha h1 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 3px;
   margin: 0;
@@ -90,88 +89,38 @@
   margin: 0.25rem 0;
 }
 
-.criminal-id {
+.morte-id {
   text-align: center;
   background: #3d5a3a;
   color: #e8c84a;
-  padding: 0.25rem;
+  padding: 0.5rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
+  font-size: 1rem;
 }
 
-.foto-dados {
+.morte-dados {
   display: flex;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.foto-area {
-  flex: 1;
-  text-align: center;
-}
-
-.foto-area img {
-  width: 100%;
-  max-width: 200px;
-  border: 3px solid #3d5a3a;
-  background: #ddd;
-}
-
-.dados-pessoais {
-  flex: 2;
-}
-
-.dados-pessoais p {
+.dados-principais p {
   margin: 0.5rem 0;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   border-bottom: 1px dotted #7b8a3b;
   padding-bottom: 0.25rem;
 }
 
-.dados-pessoais strong {
+.dados-principais strong {
   font-weight: bold;
   text-transform: uppercase;
   color: #3d5a3a;
 }
 
-.ocupacao-area {
-  margin: 1.5rem 0;
-  padding: 1rem;
-  background: #e8dba8;
-  border-left: 4px solid #e8c84a;
-}
-
-.ocupacao-area h4 {
-  margin: 0 0 0.5rem 0;
-  text-transform: uppercase;
-  color: #3d5a3a;
-}
-
-.ocupacao-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.ocupacao-list li {
-  font-size: 0.85rem;
-  font-family: monospace;
-  margin-bottom: 0.25rem;
-  color: #2e2e2e;
-}
-
-.apareceu-em {
-  margin: 1rem 0;
-  font-size: 0.85rem;
-}
-
-.apareceu-em span {
-  background: #3d5a3a;
-  color: #e8c84a;
-  padding: 0.2rem 0.4rem;
-  display: inline-block;
-  margin: 0.2rem;
+/* Destaque especial para últimas palavras */
+.dados-principais p:last-child {
+  border-bottom: none;
 }
 
 .footer-ficha {

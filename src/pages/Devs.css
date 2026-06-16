@@ -1,7 +1,7 @@
 .devs-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 2rem 2rem 2rem;
   font-family: 'Courier New', 'Fira Code', monospace;
   background-color: #3d5a3a;
   min-height: 100vh;
