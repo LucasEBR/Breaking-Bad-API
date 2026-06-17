@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-=======
+
 import { useState } from 'react';
-import { fetchCharacter } from '../services/api';  // ← Import no topo
->>>>>>> 3276738c35fd218e03827629d3392ad016431131
+import { fetchCharacter } from '../services/api';
 import './HomePage.css';
 import { useState, useEffect } from 'react';
 
