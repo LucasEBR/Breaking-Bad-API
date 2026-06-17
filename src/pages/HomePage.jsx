@@ -1,7 +1,6 @@
 
-import { useState } from 'react';
-import { fetchCharacter } from '../services/api';
 import './HomePage.css';
+import { fetchCharacter } from '../services/api';
 import { useState, useEffect } from 'react';
 
 function HomePage() {
