@@ -7,6 +7,7 @@ import Quotes from './pages/Quotes'
 import Deaths from './pages/Deaths'
 import Devs from './pages/Devs'
 import NotFound from './pages/NotFound'
+import CharacterPage from './pages/CharacterPage'
 
 //https://github.com/LucasEBR/Breaking-Bad-API
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/quotes" element={<Quotes />} />
         <Route path="/deaths" element={<Deaths />} />
         <Route path="/devs" element={<Devs />} />
+        <Route path="/character/:id" element={<CharacterPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
