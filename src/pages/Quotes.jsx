@@ -1,3 +1,4 @@
+import { fetchQuote } from '../services/api';
 import { useState, useEffect} from 'react';
 import './Quotes.css';
 
@@ -21,14 +22,8 @@ function Quotes() {
     setQuote(null);
 
     try {
-      const response = await fetch(`/api-proxy/api/breaking-bad/quotes/${searchId}`);
-      const data = await response.json();
-
-      if (data.success && data.data) {
-        setQuote(data.data);
-      } else {
-        setError('Fala não encontrada');
-      }
+const data = await fetchQuote(searchId);
+setQuote(data);
     } catch (err) {
       setError('Erro ao buscar fala');
     } finally {

@@ -1,3 +1,4 @@
+import { fetchEpisode } from '../services/api';
 import { useState, useEffect } from 'react';
 import './Episodes.css';
 
@@ -21,14 +22,8 @@ function Episodes() {
     setEpisodio(null);
 
     try {
-      const response = await fetch(`/api-proxy/api/breaking-bad/episodes/${searchId}`);
-      const data = await response.json();
-
-      if (data.success && data.data) {
-        setEpisodio(data.data);
-      } else {
-        setError('Episódio não encontrado');
-      }
+const data = await fetchEpisode(searchId);
+setEpisodio(data);
     } catch (err) {
       setError('Erro ao buscar episódio');
     } finally {

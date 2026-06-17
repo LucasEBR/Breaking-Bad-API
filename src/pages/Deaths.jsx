@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { fetchDeath } from '../services/api';
 import './Deaths.css';
 
 function Deaths() {
@@ -21,14 +22,8 @@ function Deaths() {
     setMorte(null);
 
     try {
-      const response = await fetch(`/api-proxy/api/breaking-bad/deaths/${searchId}`);
-      const data = await response.json();
-
-      if (data.success && data.data) {
-        setMorte(data.data);
-      } else {
-        setError('Morte não encontrada');
-      }
+const data = await fetchDeath(searchId);
+setMorte(data);
     } catch (err) {
       setError('Erro ao buscar morte');
     } finally {
