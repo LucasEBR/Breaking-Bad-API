@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import './Quotes.css';
 
 function Quotes() {
@@ -6,6 +6,12 @@ function Quotes() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [searchId, setSearchId] = useState('');
+
+  useEffect(() => {
+  return () => {
+    console.log('Quotes desmontada');
+  };
+}, []);
 
   const buscarQuote = async () => {
     if (!searchId) return;

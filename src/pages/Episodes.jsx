@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Episodes.css';
 
 function Episodes() {
@@ -6,6 +6,12 @@ function Episodes() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [searchId, setSearchId] = useState('');
+
+  useEffect(() => {
+    return () => {
+      console.log('Episodes desmontada');
+    };
+  }, []);
 
   const buscarEpisodio = async () => {
     if (!searchId) return;

@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import './HomePage.css';
+import { useState, useEffect } from 'react';
 
 function HomePage() {
   // --- ESTADOS ---
@@ -11,6 +11,19 @@ function HomePage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [searchId, setSearchId] = useState('');
+useEffect(() => {
+  return () => {
+    console.log('HomePage desmontada');
+  };
+}, []);
+
+useEffect(() => {
+  if (personagem) {
+    document.title = personagem.name;
+  } else {
+    document.title = 'Breaking Bad API';
+  }
+}, [personagem]);
 
   // async/await esperar a resposta da API antes de continuar
   const buscarPersonagem = async () => {

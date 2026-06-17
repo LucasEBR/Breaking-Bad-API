@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Deaths.css';
 
 function Deaths() {
@@ -6,6 +6,12 @@ function Deaths() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [searchId, setSearchId] = useState('');
+
+  useEffect(() => {
+    return () => {
+      console.log('Deaths desmontada');
+    };
+  }, []);
 
   const buscarMorte = async () => {
     if (!searchId) return;
