@@ -1,0 +1,19 @@
+.search-bar {
+  width: 100%;
+  padding: 0.75rem;
+  background: #1a1a1a;
+  border: 1px solid #7b8a3b;
+  color: #e8c84a;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: #e8c84a;
+}
+
+.search-bar::placeholder {
+  color: #7b8a3b;
+}
