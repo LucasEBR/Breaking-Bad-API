@@ -1,5 +1,6 @@
 import { fetchQuote } from '../services/api';
 import { useState, useEffect} from 'react';
+import SearchBar from '../components/SearchBar';
 import './Quotes.css';
 
 function Quotes() {
@@ -10,7 +11,6 @@ function Quotes() {
 
   useEffect(() => {
   return () => {
-    console.log('Quotes desmontada');
   };
 }, []);
 
@@ -36,14 +36,11 @@ setQuote(data);
       <div className="search-section">
         <h2>ARQUIVO DE FALAS</h2>
         <div className="input-group">
-          <input
-            type="number"
-            placeholder="ID DA FALA (1-86)"
-            value={searchId}
-            onChange={(e) => setSearchId(e.target.value)}
-            min="1"
-            max="86"
-          />
+<SearchBar 
+  value={searchId}
+  onChange={setSearchId}
+  placeholder="ID DA FALA (1-86)"
+/>
           <button onClick={buscarQuote}>BUSCAR</button>
         </div>
       </div>

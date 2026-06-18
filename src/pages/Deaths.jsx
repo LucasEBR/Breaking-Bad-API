@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { fetchDeath } from '../services/api';
+import SearchBar from '../components/SearchBar';
 import './Deaths.css';
 
 function Deaths() {
@@ -10,7 +11,6 @@ function Deaths() {
 
   useEffect(() => {
     return () => {
-      console.log('Deaths desmontada');
     };
   }, []);
 
@@ -33,20 +33,18 @@ setMorte(data);
 
   return (
     <div className="deaths-container">
-      <div className="search-section">
-        <h2>ARQUIVO DE ÓBITOS</h2>
-        <div className="input-group">
-          <input
-            type="number"
-            placeholder="ID DA MORTE (1-65)"
-            value={searchId}
-            onChange={(e) => setSearchId(e.target.value)}
-            min="1"
-            max="65"
-          />
-          <button onClick={buscarMorte}>BUSCAR</button>
-        </div>
-      </div>
+<div className="search-section">
+  <h2>ARQUIVO DE ÓBITOS</h2>
+  
+  <div className="input-group">
+    <SearchBar 
+      value={searchId}
+      onChange={setSearchId}
+      placeholder="ID DA MORTE (1-65)"
+    />
+    <button onClick={buscarMorte}>BUSCAR</button>
+  </div>
+</div>
 
       {loading && <div className="loading">BUSCANDO ÓBITO...</div>}
       {error && <div className="error">ERRO: {error}</div>}

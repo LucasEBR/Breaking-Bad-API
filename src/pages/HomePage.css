@@ -201,3 +201,61 @@
   font-weight: bold;
   border: 1px solid #e8c84a;
 }
+
+.filtro-input {
+  width: 100%;
+  padding: 0.75rem;
+  background: #1a1a1a;
+  border: 1px solid #7b8a3b;
+  color: #e8c84a;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #d4d6b0;
+  border: 2px solid #2e2e2e;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  color: #2e2e2e;
+  margin: 0.5rem 0;
+}
+
+.sem-resultados {
+  color: #e8c84a;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 0.75rem;
+  background: #1a1a1a;
+  border: 1px solid #7b8a3b;
+  color: #e8c84a;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  margin-top: 1rem;
+}

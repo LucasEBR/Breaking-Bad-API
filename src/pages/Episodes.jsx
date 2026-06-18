@@ -1,5 +1,6 @@
 import { fetchEpisode } from '../services/api';
 import { useState, useEffect } from 'react';
+import SearchBar from '../components/SearchBar';
 import './Episodes.css';
 
 function Episodes() {
@@ -10,7 +11,6 @@ function Episodes() {
 
   useEffect(() => {
     return () => {
-      console.log('Episodes desmontada');
     };
   }, []);
 
@@ -36,14 +36,11 @@ setEpisodio(data);
       <div className="search-section">
         <h2>ARQUIVO DE EPISÓDIOS</h2>
         <div className="input-group">
-          <input
-            type="number"
-            placeholder="ID DO EP"
-            value={searchId}
-            onChange={(e) => setSearchId(e.target.value)}
-            min="1"
-            max="62"
-          />
+<SearchBar 
+  value={searchId}
+  onChange={setSearchId}
+  placeholder="ID DO EP (1-62)"
+/>
           <button onClick={buscarEpisodio}>BUSCAR</button>
         </div>
       </div>

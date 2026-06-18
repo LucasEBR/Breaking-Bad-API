@@ -46,8 +46,6 @@ function Devs() {
               <div className="dados-pessoais">
                 <p><strong>NOME DE CÓDIGO:</strong> {dev.nome}</p>
                 <p><strong>OCUPAÇÃO:</strong> {dev.ocupacao}</p>
-                <p><strong>FUNÇÃO NO PROJETO:</strong> {dev.funcao}</p>
-                <p><strong>STATUS:</strong> {dev.status}</p>
                 <p><strong>OBSERVAÇÃO:</strong> {dev.observacao}</p>
               </div>
             </div>

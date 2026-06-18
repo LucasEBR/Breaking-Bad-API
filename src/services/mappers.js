@@ -13,11 +13,11 @@ export const mapCharacter = (apiData) => ({
 
 export const mapEpisode = (apiData) => ({
   id: apiData.id,
-  episodeId: apiData.episode_id,
+  episode_id: apiData.episode_id,
   title: apiData.title,
   season: apiData.season,
   episode: apiData.episode,
-  airDate: apiData.air_date,
+  air_date: apiData.air_date,
   characters: apiData.characters || [],
   series: apiData.series
 });
@@ -31,10 +31,10 @@ export const mapQuote = (apiData) => ({
 
 export const mapDeath = (apiData) => ({
   id: apiData.id,
-  victim: apiData.death,
+  death: apiData.death,
   cause: apiData.cause,
   responsible: apiData.responsible,
-  lastWords: apiData.last_words,
+  last_words: apiData.last_words,
   season: apiData.season,
   series: apiData.series
 });

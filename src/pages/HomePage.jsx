@@ -1,161 +1,68 @@
-import './HomePage.css';
-import { fetchCharacter } from '../services/api';
-import CharacterInfo from '../components/CharacterInfo';
 import { useState, useEffect } from 'react';
+import { fetchAllCharacters } from '../services/api'; // <-- nova função
+import SearchBar from '../components/SearchBar';
+import './HomePage.css';
 
-function HomePage({ initialId = '' }) {
-  const [personagem, setPersonagem] = useState(null);
-  const [loading, setLoading] = useState(false);
+function HomePage() {
+  const [personagens, setPersonagens] = useState([]); // lista completa
+  const [personagensFiltrados, setPersonagensFiltrados] = useState([]); // lista filtrada
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [searchId, setSearchId] = useState(initialId);
+  const [filtro, setFiltro] = useState(''); // texto do filtro
 
+  // Carrega TODOS os personagens ao montar
   useEffect(() => {
-    const controller = new AbortController();
-
-    return () => {
-      controller.abort();
+    const carregarTodos = async () => {
+      try {
+        const data = await fetchAllCharacters();
+        setPersonagens(data);
+        setPersonagensFiltrados(data);
+      } catch (err) {
+        setError('Erro ao carregar personagens');
+      } finally {
+        setLoading(false);
+      }
     };
+    carregarTodos();
   }, []);
 
+  // Filtro local - executa quando o texto ou a lista mudar
   useEffect(() => {
-    if (personagem) {
-      document.title = personagem.name;
-    } else {
-      document.title = 'Breaking Bad API';
-    }
-  }, [personagem]);
-  useEffect(() => {
-  if (initialId) {
-    setSearchId(initialId);
-  }
-}, [initialId]);
+    const filtrados = personagens.filter(p => 
+      p.name.toLowerCase().includes(filtro.toLowerCase())
+    );
+    setPersonagensFiltrados(filtrados);
+  }, [filtro, personagens]);
 
-useEffect(() => {
-  const carregarPersonagem = async () => {
-    if (!searchId || !initialId) return;
-
-    setLoading(true);
-    setError(null);
-    setPersonagem(null);
-
-    try {
-      const data = await fetchCharacter(searchId);
-      setPersonagem(data);
-    } catch (err) {
-      setError(err.message || 'Erro ao buscar personagem');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  carregarPersonagem();
-}, [searchId, initialId]);
-
-  const buscarPersonagem = async () => {
-    if (!searchId) return;
-
-    setLoading(true);
-    setError(null);
-    setPersonagem(null);
-
-    try {
-      const data = await fetchCharacter(searchId);
-      setPersonagem(data);
-    } catch (err) {
-      setError(err.message || 'Erro ao buscar personagem');
-    } finally {
-      setLoading(false);
-    }
-  };
+  if (loading) return <div className="loading">CARREGANDO...</div>;
+  if (error) return <div className="error">{error}</div>;
 
   return (
     <div className="criminal-container">
       <div className="search-section">
         <h2>ARQUIVO CRIMINAL</h2>
+        
+        {/* CAMPO DE FILTRO - sem botão, filtra em tempo real */}
 
-        <div className="input-group">
-          <input
-            type="number"
-            placeholder="ID DO PERP (1-56)"
-            value={searchId}
-            onChange={(e) => setSearchId(e.target.value)}
-            min="1"
-            max="56"
-          />
-
-          <button onClick={buscarPersonagem}>
-            BUSCAR
-          </button>
-        </div>
+<SearchBar 
+  value={filtro}
+  onChange={setFiltro}
+  placeholder="Buscar personagem..."
+/>
       </div>
 
-      {loading && (
-        <div className="loading">
-          BUSCANDO...
-        </div>
-      )}
-
-      {error && (
-        <div className="error">
-          ERRO: {error}
-        </div>
-      )}
-
-      {personagem && (
-        <div className="ficha-criminal">
-          <div className="header-ficha">
-            <h1>DEPARTAMENTO DE JUSTIÇA</h1>
-            <h3>REGISTRO CRIMINAL / CONDENADO</h3>
+      <div className="cards-grid">
+        {personagensFiltrados.map(p => (
+          <div key={p.id} className="card">
+            <img src={p.image_url} alt={p.name} />
+            <h3>{p.name}</h3>
+            <p>{p.portrayed}</p>
           </div>
-
-          <div className="criminal-id">
-            ID: #{personagem.id}
-          </div>
-
-          <div className="foto-dados">
-            <div className="foto-area">
-              <img
-                src={personagem.image_url}
-                alt={personagem.name}
-              />
-            </div>
-
-            <CharacterInfo personagem={personagem} />
-          </div>
-
-          <div className="ocupacao-area">
-            <h4>OCUPAÇÕES / CRIMES</h4>
-
-            <ul className="ocupacao-list">
-              {personagem.occupation?.map((occ, idx) => (
-                <li key={idx}>
-                  • {occ}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="apareceu-em">
-            <strong>APARIÇÕES:</strong>
-            <br />
-
-            {personagem.appearances?.map((ep, idx) => (
-              <span key={idx}>
-                TEMP {ep}{' '}
-              </span>
-            ))}
-
-            <p>
-              <strong>TOTAL DE EPISÓDIOS:</strong>{' '}
-              {personagem.episodes_count}
-            </p>
-          </div>
-
-          <div className="footer-ficha">
-            ESTE DOCUMENTO É CONFIDENCIAL.
-          </div>
-        </div>
-      )}
+        ))}
+        {personagensFiltrados.length === 0 && (
+          <p className="sem-resultados">Nenhum personagem encontrado</p>
+        )}
+      </div>
     </div>
   );
 }
