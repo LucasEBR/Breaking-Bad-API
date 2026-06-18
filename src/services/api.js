@@ -2,7 +2,7 @@ import { mapCharacter, mapEpisode, mapQuote, mapDeath } from './mappers';
 
 const BASE_URL = '/api-proxy/api/breaking-bad';
 
-// Busca TODOS os personagens (1 a 56)
+// Busca todos os personagens (1 a 56)
 export const fetchAllCharacters = async () => {
   const promises = [];
   for (let i = 1; i <= 56; i++) {
@@ -10,10 +10,11 @@ export const fetchAllCharacters = async () => {
   }
   const results = await Promise.all(promises);
   return results
-    .filter(item => item.success) // remove falhas
+    .filter(item => item.success) // remove falhados
     .map(item => mapCharacter(item.data));
 };
 
+//Busca um personagem específico
 export const fetchCharacter = async (id) => {
   const response = await fetch(`${BASE_URL}/characters/${id}`);
   const data = await response.json();

@@ -1,6 +1,6 @@
 .search-bar {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.75rem,0.75rem;
   background: #1a1a1a;
   border: 1px solid #7b8a3b;
   color: #e8c84a;

@@ -13,6 +13,7 @@ function HomePage() {
   const [error, setError] = useState(null);
   const [filtro, setFiltro] = useState('');
 
+  // chamado qnd o componente é montado ou quando location.key muda
   useEffect(() => {
     const carregarTodos = async () => {
       setLoading(true);
@@ -29,6 +30,7 @@ function HomePage() {
     carregarTodos();
   }, [location.key]); 
 
+  //chamado qnd filtro ou personagens mudam
   useEffect(() => {
     const filtrados = personagens.filter(p => {
       const termo = filtro.toLowerCase().trim();
