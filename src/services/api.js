@@ -14,6 +14,13 @@ export const fetchAllCharacters = async () => {
     .map(item => mapCharacter(item.data));
 };
 
+export const fetchCharacter = async (id) => {
+  const response = await fetch(`${BASE_URL}/characters/${id}`);
+  const data = await response.json();
+  if (!data.success) throw new Error('Personagem não encontrado');
+  return mapCharacter(data.data);
+};
+
 export const fetchEpisode = async (id) => {
   const response = await fetch(`${BASE_URL}/episodes/${id}`);
   const data = await response.json();

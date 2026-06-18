@@ -1,26 +1,27 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { fetchCharacter } from '../services/api';
-import './CharacterInfo.css';
+import CharacterInfo from '../components/CharacterInfo';
+import './HomePage-CharacterPage.css';
 
-function CharacterInfo() {
+function CharacterPage() {
   const { id } = useParams();
   const [personagem, setPersonagem] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const carregarPersonagem = async () => {
+    const carregar = async () => {
       try {
         const data = await fetchCharacter(id);
         setPersonagem(data);
-      } catch (err) {
+      } catch {
         setError('Personagem não encontrado');
       } finally {
         setLoading(false);
       }
     };
-    carregarPersonagem();
+    carregar();
   }, [id]);
 
   if (loading) return <div className="loading">CARREGANDO...</div>;
@@ -45,18 +46,7 @@ function CharacterInfo() {
           <div className="foto-area">
             <img src={personagem.image_url} alt={personagem.name} />
           </div>
-          <div className="dados-pessoais">
-            <p><strong>NOME COMPLETO:</strong> {
-              (personagem.full_name || personagem.name).toUpperCase()
-            }</p>
-            
-            {personagem.isHeisenberg && (
-              <p><strong>ALCUNHA:</strong> HEISENBERG</p>
-            )}
-            
-            <p><strong>DATA DE NASCIMENTO:</strong> {personagem.birth_date || "DESCONHECIDA"}</p>
-            <p><strong>INTERPRETADO POR:</strong> {personagem.portrayed}</p>
-          </div>
+          <CharacterInfo personagem={personagem} />
         </div>
 
         <div className="ocupacao-area">
@@ -84,4 +74,4 @@ function CharacterInfo() {
   );
 }
 
-export default CharacterInfo;
+export default CharacterPage;

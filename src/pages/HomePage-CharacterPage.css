@@ -1,3 +1,9 @@
+/* ============================================
+   SHARED.CSS - Breaking Bad Theme
+   Usado por HomePage e CharacterPage
+   ============================================ */
+
+/* --- CONTAINER PRINCIPAL --- */
 .criminal-container {
   max-width: 800px;
   margin: 0 auto;
@@ -7,6 +13,7 @@
   min-height: 100vh;
 }
 
+/* --- BOTÃO VOLTAR --- */
 .back-button {
   display: inline-block;
   margin-bottom: 1.5rem;
@@ -24,11 +31,48 @@
   color: #1a2a18;
 }
 
+/* --- SEÇÃO DE BUSCA --- */
+.search-section {
+  background: #2e2e2e;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid #7b8a3b;
+  box-shadow: 5px 5px 0px #1a2a18;
+}
+
+.search-section h2 {
+  color: #e8c84a;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e8c84a;
+  display: inline-block;
+}
+
+/* --- GRID DE CARDS --- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.sem-resultados {
+  color: #e8c84a;
+  text-align: center;
+  grid-column: 1 / -1;
+  font-size: 1.2rem;
+  padding: 2rem;
+}
+
+/* --- FICHA CRIMINAL --- */
 .ficha-criminal {
   background: #d4d6b0;
   border: 3px solid #2e2e2e;
   padding: 2rem;
   box-shadow: 8px 8px 0px #1a2a18;
+  margin-top: 1.5rem;
 }
 
 .header-ficha {
@@ -59,6 +103,7 @@
   margin-bottom: 1.5rem;
 }
 
+/* --- FOTO + DADOS --- */
 .foto-dados {
   display: flex;
   gap: 2rem;
@@ -95,6 +140,7 @@
   color: #3d5a3a;
 }
 
+/* --- OCUPAÇÕES --- */
 .ocupacao-area {
   margin: 1.5rem 0;
   padding: 1rem;
@@ -121,6 +167,7 @@
   color: #2e2e2e;
 }
 
+/* --- APARIÇÕES --- */
 .apareceu-em {
   margin: 1rem 0;
   font-size: 0.85rem;
@@ -134,6 +181,7 @@
   margin: 0.2rem;
 }
 
+/* --- RODAPÉ DA FICHA --- */
 .footer-ficha {
   margin-top: 1.5rem;
   padding-top: 1rem;
@@ -143,6 +191,7 @@
   color: #7b8a3b;
 }
 
+/* --- LOADING E ERRO --- */
 .loading {
   text-align: center;
   font-size: 1.5rem;

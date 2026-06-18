@@ -1,10 +1,11 @@
+import { useEffect } from 'react';
 import './Devs.css'
 
 function Devs() {
   const devs = [
     {
       nome: "L.E.",
-      foto: "/valter2.webp",
+      foto: "/valter3.webp",
       ocupacao: "Desenvolvedor Frontend",
       funcao: "Arquitetura React",
       status: "ATIVO",
@@ -12,7 +13,7 @@ function Devs() {
     },
     {
       nome: "V.X.",
-      foto: "/jessico.webp",
+      foto: "/jessico2.webp",
       ocupacao: "Desenvolvedor Frontend",
       funcao: "Arquitetura React",
       status: "ATIVO",

@@ -1,22 +1,21 @@
 import { useState, useEffect } from 'react';
 import { fetchAllCharacters } from '../services/api';
+import { useLocation } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
 import Card from '../components/Card';
-import './HomePage.css';
+import './HomePage-CharacterPage.css';
 
 function HomePage() {
+  const location = useLocation();
   const [personagens, setPersonagens] = useState([]);
   const [personagensFiltrados, setPersonagensFiltrados] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [filtro, setFiltro] = useState('');
 
-useEffect(() => {
-  document.title = 'Breaking Bad - Arquivo Criminal';
-}, []);
-
   useEffect(() => {
     const carregarTodos = async () => {
+      setLoading(true);
       try {
         const data = await fetchAllCharacters();
         setPersonagens(data);
@@ -28,13 +27,18 @@ useEffect(() => {
       }
     };
     carregarTodos();
-  }, []);
+  }, [location.key]); 
 
-  // Filtro local
   useEffect(() => {
-    const filtrados = personagens.filter(p => 
-      p.name.toLowerCase().includes(filtro.toLowerCase())
-    );
+    const filtrados = personagens.filter(p => {
+      const termo = filtro.toLowerCase().trim();
+      if (!termo) return true;
+
+      const idMatch = p.id === Number(termo);
+      const nomeMatch = p.name.toLowerCase().includes(termo);
+
+      return idMatch || nomeMatch;
+    });
     setPersonagensFiltrados(filtrados);
   }, [filtro, personagens]);
 
@@ -45,16 +49,16 @@ useEffect(() => {
     <div className="criminal-container">
       <div className="search-section">
         <h2>ARQUIVO CRIMINAL</h2>
-        <SearchBar 
+        <SearchBar
           value={filtro}
           onChange={setFiltro}
-          placeholder="Buscar personagem..."
+          placeholder="NOME OU ID DO PERP"
         />
       </div>
 
       <div className="cards-grid">
         {personagensFiltrados.map(p => (
-          <Card 
+          <Card
             key={p.id}
             name={p.name}
             image={p.image_url}
