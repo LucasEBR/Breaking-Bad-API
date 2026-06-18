@@ -23,7 +23,6 @@ function Header() {
       </div>
       <nav>
         <NavLink to="/">Ficha Criminal</NavLink>
-        <NavLink to="/character/1">Walter White</NavLink>
         <NavLink to="/episodes">Aparições</NavLink>
         <NavLink to="/quotes">Gravações</NavLink>
         <NavLink to="/deaths">Obtuário</NavLink>

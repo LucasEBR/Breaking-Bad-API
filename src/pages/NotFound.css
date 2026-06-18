@@ -7,23 +7,27 @@
 .notfound-container h1 {
   color: black;
   font-size: 4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
 }
 
 .notfound-container .p1 {
   color: rgb(255, 0, 34);
   font-size: 1rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
 }
 
 .notfound-container .p2 {
   color: red;
   font-size: 1.5rem;
   margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 .notfound-container img {
   display: block;
-  margin: 0 auto;
+  margin: 2rem auto 0 auto;
   max-width: 10%;
   height: auto;
 }

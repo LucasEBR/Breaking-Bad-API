@@ -11,6 +11,10 @@ function HomePage() {
   const [error, setError] = useState(null);
   const [filtro, setFiltro] = useState('');
 
+useEffect(() => {
+  document.title = 'Breaking Bad - Arquivo Criminal';
+}, []);
+
   useEffect(() => {
     const carregarTodos = async () => {
       try {
@@ -26,6 +30,7 @@ function HomePage() {
     carregarTodos();
   }, []);
 
+  // Filtro local
   useEffect(() => {
     const filtrados = personagens.filter(p => 
       p.name.toLowerCase().includes(filtro.toLowerCase())

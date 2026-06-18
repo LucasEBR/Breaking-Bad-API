@@ -9,10 +9,9 @@ function Deaths() {
   const [error, setError] = useState(null);
   const [searchId, setSearchId] = useState('');
 
-  useEffect(() => {
-    return () => {
-    };
-  }, []);
+useEffect(() => {
+  document.title = 'Breaking Bad - Mortes';
+}, []);
 
   const buscarMorte = async () => {
     if (!searchId) return;

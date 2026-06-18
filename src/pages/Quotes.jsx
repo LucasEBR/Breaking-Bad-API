@@ -9,9 +9,8 @@ function Quotes() {
   const [error, setError] = useState(null);
   const [searchId, setSearchId] = useState('');
 
-  useEffect(() => {
-  return () => {
-  };
+useEffect(() => {
+  document.title = 'Breaking Bad - Falas';
 }, []);
 
   const buscarQuote = async () => {

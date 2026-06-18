@@ -1,5 +1,5 @@
-import { fetchEpisode } from '../services/api';
 import { useState, useEffect } from 'react';
+import { fetchEpisode } from '../services/api';
 import SearchBar from '../components/SearchBar';
 import './Episodes.css';
 
@@ -10,9 +10,16 @@ function Episodes() {
   const [searchId, setSearchId] = useState('');
 
   useEffect(() => {
-    return () => {
-    };
+    document.title = 'Breaking Bad - Episódios';
   }, []);
+
+  useEffect(() => {
+    if (episodio) {
+      document.title = `Breaking Bad - ${episodio.title}`;
+    } else {
+      document.title = 'Breaking Bad - Episódios';
+    }
+  }, [episodio]);
 
   const buscarEpisodio = async () => {
     if (!searchId) return;

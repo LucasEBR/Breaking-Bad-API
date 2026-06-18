@@ -4,7 +4,7 @@ function Devs() {
   const devs = [
     {
       nome: "L.E.",
-      foto: "/valter.webp",
+      foto: "/valter2.webp",
       ocupacao: "Desenvolvedor Frontend",
       funcao: "Arquitetura React",
       status: "ATIVO",
@@ -19,6 +19,10 @@ function Devs() {
       observacao: "Especialista em cooks"
     }
   ]
+
+  useEffect(() => {
+  document.title = 'Breaking Bad - Desenvolvedores';
+}, []);
 
   return (
     <div className="devs-container">
